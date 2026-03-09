@@ -13,7 +13,7 @@ const projects = [
     ],
     stack: ["React", "Node.js", "MongoDB", "Ollama", "NLP"],
     github: "https://github.com/kushith19/SortIt-socratic-AI-mentor-",
-    demo: "https://vimeo.com/1168965536?share=copy&fl=sv&fe=ci",
+    demo: "https://vimeo.com/1171793551?fl=ip&fe=ec",
   },
   {
     title: "HireAxis",
@@ -25,7 +25,7 @@ const projects = [
     ],
     stack: ["FastAPI", "MERN", "NLP", "OpenCV", "ResNet50", "LLM"],
     github: "https://github.com/kushith19/HireAxis",
-    demo: "https://yourdemo.link/mlens",
+    demo: '',
   },
 ];
 
@@ -44,7 +44,20 @@ function Tag({ text }) {
   );
 }
 
-function LinkBtn({ href, children }) {
+function LinkBtn({ href, children, disabled }) {
+  if (disabled) {
+    return (
+      <span
+        className="font-mono text-[11px] tracking-wider uppercase px-3 py-1.5 rounded-lg cursor-not-allowed"
+        style={{
+          border: "1px solid rgba(139,92,246,0.15)",
+          color: "rgba(139,92,246,0.3)",
+        }}
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <a
       href={href}
@@ -114,7 +127,9 @@ export default function Projects() {
               </div>
               <div className="flex gap-2 flex-shrink-0 self-start">
                 <LinkBtn href={p.github}>GitHub</LinkBtn>
-                <LinkBtn href={p.demo}>Demo</LinkBtn>
+                <LinkBtn href={p.demo} disabled={!p.demo}>
+                  Demo
+                </LinkBtn>
               </div>
             </div>
 
