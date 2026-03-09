@@ -1,6 +1,7 @@
 import PageLayout from "../components/PageLayout";
 
-const RESUME_URL = "https://drive.google.com/file/d/1Ny8i_Lf-4hYelTgJ2svv7BnaFtqBWAwc/view?usp=sharing";
+const RESUME_URL =
+  "https://drive.google.com/file/d/1Ny8i_Lf-4hYelTgJ2svv7BnaFtqBWAwc/view?usp=sharing";
 
 const highlights = [
   { label: "Degree", value: "B.Tech, CSE (Data Science) · 2027" },
@@ -12,7 +13,8 @@ const highlights = [
   },
   {
     label: "Strength",
-    value: "DSA ·  Clean architecture · Backend engineering · AI-powered Web Apps",
+    value:
+      "DSA ·  Clean architecture · Backend engineering · AI-powered Web Apps",
   },
   {
     label: "Goal",
@@ -28,15 +30,16 @@ export default function About() {
         className="text-base leading-relaxed mb-10 font-sans"
         style={{ color: "#a1a1aa", maxWidth: "560px" }}
       >
-        I'm an engineer with a background in Computer Science and Data
-        Science, focused on building scalable products that combine strong
-        engineering with intelligent behavior. I work across the MERN stack,
-        machine learning, and modern AI systems to create solutions that are not
-        just functional, but adaptive and insight-driven.
-        <br /><br /> As technology
-        evolves, I continuously upgrade my skills, thoughtfully incorporating
-        advances in machine learning, generative AI, and large language models
-        to build systems that stay relevant and impactful over time.
+        I'm an engineer with a background in Computer Science and Data Science,
+        focused on building scalable products that combine strong engineering
+        with intelligent behavior. I work across the MERN stack, machine
+        learning, and modern AI systems to create solutions that are not just
+        functional, but adaptive and insight-driven.
+        <br />
+        <br /> As technology evolves, I continuously upgrade my skills,
+        thoughtfully incorporating advances in machine learning, generative AI,
+        and large language models to build systems that stay relevant and
+        impactful over time.
       </p>
 
       {/* Resume download */}
@@ -44,7 +47,7 @@ export default function About() {
         href={RESUME_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-4 rounded-xl px-6 py-4 mb-10 transition-all duration-300"
+        className="group flex items-center gap-4 rounded-xl px-4 sm:px-6 py-4 mb-10 transition-all duration-300"
         style={{
           border: "1px solid rgba(139,92,246,0.25)",
           background: "#18181b",
@@ -128,7 +131,7 @@ export default function About() {
         {highlights.map((h, i) => (
           <div
             key={h.label}
-            className="flex items-start gap-6 px-6 py-4"
+            className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 px-4 sm:px-6 py-3 sm:py-4"
             style={{
               borderBottom:
                 i < highlights.length - 1
@@ -138,7 +141,7 @@ export default function About() {
             }}
           >
             <span
-              className="font-mono text-xs w-20 flex-shrink-0 mt-0.5"
+              className="font-mono text-xs sm:w-20 flex-shrink-0 mt-0.5"
               style={{ color: "rgba(139,92,246,0.7)" }}
             >
               {h.label}

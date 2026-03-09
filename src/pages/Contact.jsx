@@ -30,7 +30,8 @@ export default function Contact() {
   return (
     <PageLayout title="Let's Connect">
       <p className="text-sm mb-10" style={{ color: "#71717a" }}>
-        Always open to exciting roles, internships, and collaborations — let's build.
+        Always open to exciting roles, internships, and collaborations — let's
+        build.
       </p>
 
       <div className="flex flex-col gap-4">
@@ -43,7 +44,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.12 + 0.1 }}
-            className="flex items-center gap-5 rounded-xl px-6 py-5 transition-all duration-200 group"
+            className="flex items-center gap-3 sm:gap-5 rounded-xl px-4 sm:px-6 py-4 sm:py-5 transition-all duration-200 group"
             style={{
               background: "#18181b",
               border: "1px solid rgba(139,92,246,0.18)",
@@ -64,8 +65,8 @@ export default function Contact() {
             >
               <Icon icon={l.icon} width="24" />
             </span>
-            <div className="flex-1">
-              <div className="flex items-baseline gap-3">
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-3">
                 <span
                   className="font-mono text-sm font-medium"
                   style={{ color: "#f4f4f5" }}
@@ -73,7 +74,7 @@ export default function Contact() {
                   {l.label}
                 </span>
                 <span
-                  className="font-mono text-xs"
+                  className="font-mono text-xs break-all"
                   style={{ color: "#8b5cf6" }}
                 >
                   {l.handle}
