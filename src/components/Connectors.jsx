@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion'
 
-/**
- * Draws SVG connector lines between nodes.
- * `lines` = array of { x1, y1, x2, y2, delay }
- */
+
 export default function Connectors({ lines, width, height }) {
   return (
     <svg

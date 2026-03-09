@@ -26,7 +26,7 @@ export default function Node({ label, route, delay = 0, isOutput = false }) {
       className="group relative cursor-pointer select-none"
       style={{ zIndex: 10 }}
     >
-      {/* Outer glow on hover */}
+      
       <div
         className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         style={{
@@ -57,7 +57,7 @@ export default function Node({ label, route, delay = 0, isOutput = false }) {
           e.currentTarget.style.transform = 'translateY(0)'
         }}
       >
-        {/* Top-left: type label */}
+        
         <span
           className="font-mono text-[9px] tracking-widest uppercase"
           style={{ color: 'rgba(139,92,246,0.7)' }}
@@ -65,7 +65,7 @@ export default function Node({ label, route, delay = 0, isOutput = false }) {
           {isOutput ? 'output' : label === 'Start' ? 'trigger' : 'node'}
         </span>
 
-        {/* Icon + Label row */}
+        
         <div className="flex items-center gap-2">
           <span style={{ color: '#8b5cf6', fontSize: '13px' }}>
             {iconMap[label] || '●'}
@@ -78,7 +78,7 @@ export default function Node({ label, route, delay = 0, isOutput = false }) {
           </span>
         </div>
 
-        {/* Bottom status dot */}
+      
         <div className="flex items-center gap-1.5 mt-1">
           <span
             className="w-1.5 h-1.5 rounded-full"

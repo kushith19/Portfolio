@@ -3,31 +3,16 @@ import Node from './Node'
 import Connectors from './Connectors'
 import { motion } from 'framer-motion'
 
-/*
-  Layout (all values in px, relative to canvas):
 
-  Row layout (Y centers):
-    Top branch (Skills):       Y = 120
-    Main spine:                Y = 260
-    Bottom branch (Achievements): Y = 400
 
-  X positions (node left edge):
-    Start:        60
-    About:       230
-    Projects:    420
-    Skills:      580   (branch from Projects)
-    Achievements:580   (branch from Projects)
-    Contact:     760
-*/
+const NODE_W = 130  
+const NODE_H = 88   
 
-const NODE_W = 130  // approximate node card width
-const NODE_H = 88   // approximate node card height
 
-// Node center helpers
 const cx = (x) => x + NODE_W / 2
 const cy = (y) => y + NODE_H / 2
 
-// Node positions: { x, y } = top-left of node card
+
 const POS = {
   Start:        { x: 30,  y: 152 },
   About:        { x: 210, y: 152 },
@@ -40,15 +25,15 @@ const POS = {
 const CANVAS_W = 1020
 const CANVAS_H = 400
 
-// Lines: from node-center to node-center (straight)
+
 const LINES = [
-  // Main spine
+  
   { x1: cx(POS.Start.x),    y1: cy(POS.Start.y),    x2: cx(POS.About.x),    y2: cy(POS.About.y),    delay: 0.05 },
   { x1: cx(POS.About.x),    y1: cy(POS.About.y),    x2: cx(POS.Projects.x), y2: cy(POS.Projects.y), delay: 0.2  },
-  // Branches from Projects
+  
   { x1: cx(POS.Projects.x), y1: cy(POS.Projects.y), x2: cx(POS.Skills.x),       y2: cy(POS.Skills.y),       delay: 0.35 },
   { x1: cx(POS.Projects.x), y1: cy(POS.Projects.y), x2: cx(POS.Achievements.x), y2: cy(POS.Achievements.y), delay: 0.35 },
-  // Converge to Contact
+
   { x1: cx(POS.Skills.x),       y1: cy(POS.Skills.y),       x2: cx(POS.Contact.x), y2: cy(POS.Contact.y), delay: 0.5 },
   { x1: cx(POS.Achievements.x), y1: cy(POS.Achievements.y), x2: cx(POS.Contact.x), y2: cy(POS.Contact.y), delay: 0.5 },
 ]
@@ -68,10 +53,10 @@ export default function WorkflowCanvas() {
       className="relative"
       style={{ width: CANVAS_W, height: CANVAS_H }}
     >
-      {/* SVG connectors underneath nodes */}
+      
       <Connectors lines={LINES} width={CANVAS_W} height={CANVAS_H} />
 
-      {/* Nodes absolutely positioned */}
+      
       {NODES.map((n) => (
         <div
           key={n.label}
@@ -90,7 +75,7 @@ export default function WorkflowCanvas() {
         </div>
       ))}
 
-      {/* Subtle execution flow label */}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

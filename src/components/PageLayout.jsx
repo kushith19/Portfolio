@@ -19,7 +19,7 @@ export default function PageLayout({ tag, title, children }) {
       className="min-h-screen"
       style={{ background: '#09090b', color: '#f4f4f5' }}
     >
-      {/* Top nav */}
+     
       <nav
         className="flex items-center justify-between px-8 py-5"
         style={{ borderBottom: '1px solid rgba(139,92,246,0.12)' }}
@@ -56,7 +56,7 @@ export default function PageLayout({ tag, title, children }) {
         </div>
       </nav>
 
-      {/* Page content */}
+      
       <main className="max-w-3xl mx-auto px-8 py-6">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -81,7 +81,7 @@ export default function PageLayout({ tag, title, children }) {
         </motion.div>
       </main>
 
-      {/* Subtle prev / next arrows */}
+    
       {(() => {
         const currentIdx = navLinks.findIndex(l => l.path === location.pathname)
         if (currentIdx === -1) return null
