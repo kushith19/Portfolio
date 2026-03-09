@@ -78,72 +78,37 @@ const NODES = [
 ];
 
 export default function WorkflowCanvas() {
-  const wrapperRef = useRef(null);
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    function updateScale() {
-      if (!wrapperRef.current) return;
-      const parentWidth =
-        wrapperRef.current.parentElement?.clientWidth || window.innerWidth;
-      // Leave a small horizontal margin (16px each side)
-      const available = Math.min(parentWidth - 32, CANVAS_W);
-      setScale(Math.min(available / CANVAS_W, 1));
-    }
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
-
   return (
-    <div
-      ref={wrapperRef}
-      style={{
-        width: CANVAS_W * scale,
-        height: CANVAS_H * scale,
-        overflow: "hidden",
-        margin: "0 auto",
-      }}
-    >
-      <div
-        className="relative"
-        style={{
-          width: CANVAS_W,
-          height: CANVAS_H,
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
-        }}
-      >
-        <Connectors lines={LINES} width={CANVAS_W} height={CANVAS_H} />
+    <div className="relative" style={{ width: CANVAS_W, height: CANVAS_H }}>
+      <Connectors lines={LINES} width={CANVAS_W} height={CANVAS_H} />
 
-        {NODES.map((n) => (
-          <div
-            key={n.label}
-            style={{
-              position: "absolute",
-              left: POS[n.label].x,
-              top: POS[n.label].y,
-            }}
-          >
-            <Node
-              label={n.label}
-              route={n.route}
-              delay={n.delay}
-              isOutput={n.isOutput}
-            />
-          </div>
-        ))}
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-4 right-4 font-mono text-[10px] tracking-widest uppercase"
-          style={{ color: "rgba(139,92,246,0.4)" }}
+      {NODES.map((n) => (
+        <div
+          key={n.label}
+          style={{
+            position: "absolute",
+            left: POS[n.label].x,
+            top: POS[n.label].y,
+          }}
         >
-          workflow · 6 nodes · live
-        </motion.div>
-      </div>
+          <Node
+            label={n.label}
+            route={n.route}
+            delay={n.delay}
+            isOutput={n.isOutput}
+          />
+        </div>
+      ))}
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-4 right-4 font-mono text-[10px] tracking-widest uppercase"
+        style={{ color: "rgba(139,92,246,0.4)" }}
+      >
+        workflow · 6 nodes · live
+      </motion.div>
     </div>
   );
 }

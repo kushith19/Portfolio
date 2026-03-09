@@ -28,8 +28,8 @@ export default function Home() {
         </p>
       </motion.div>
 
-      {/* Canvas wrapper — scales responsively */}
-      <div className="mt-4 w-full flex justify-center">
+      {/* Canvas wrapper — horizontal scroll on small screens */}
+      <div className="mt-4" style={{ overflowX: "auto", maxWidth: "100vw" }}>
         <WorkflowCanvas />
       </div>
 
