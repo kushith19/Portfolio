@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "SortIt",
-    badge: "Hackathon Winner",
+    badge: "🏆 Hackathon Winner",
     problem: "A Socratic Learning Mentor for Sorting Algorithms",
     highlights: [
       "AI-powered sorting tutor with adaptive guidance, emotion-aware coaching, and bilingual support (English/Kannada)",
@@ -27,6 +27,19 @@ const projects = [
     github: "https://github.com/kushith19/HireAxis",
     demo: '',
   },
+  {
+  title: "CRISP",
+   badge: "ML Data Science",
+  problem: "Customer Retention Intelligence & Segmentation Platform",
+  highlights: [
+    "XGBoost churn prediction pipeline with SHAP TreeExplainer — every customer gets an individual explanation of the top 5 factors driving their risk score, not just a probability.",
+    "LLM retention brief powered by Llama 3.3 70B via Groq — aggregates SHAP drivers and segment analytics into structured findings and actions, streamed live on upload.",
+    "Interactive risk segmentation, cohort analytics, and a customer explorer with per customer SHAP charts — turning churn prediction into actionable retention intelligence.",
+  ],
+  stack: ["React", "Node.js", "FastAPI", "XGBoost", "SHAP", "Groq"],
+  github: "https://github.com/kushith19/CRISP",
+  demo: "https://vimeo.com/1173256893?fl=ip&fe=ec",
+}
 ];
 
 function Tag({ text }) {
@@ -116,7 +129,7 @@ export default function Projects() {
                         color: "rgba(16,185,129,0.7)",
                       }}
                     >
-                      <span style={{ fontSize: "10px" }}>🏆</span>
+                      <span style={{ fontSize: "10px" }}></span>
                       {p.badge}
                     </span>
                   )}
