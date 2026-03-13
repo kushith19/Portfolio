@@ -41,7 +41,6 @@ export default function Home() {
         className="fixed bottom-5 left-6 font-mono text-[10px] tracking-widest"
         style={{ color: "rgba(139,92,246,0.25)" }}
       >
-        ● inspired by n8n
       </motion.span>
     </div>
   );
