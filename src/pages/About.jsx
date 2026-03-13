@@ -1,7 +1,7 @@
 import PageLayout from "../components/PageLayout";
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1Ny8i_Lf-4hYelTgJ2svv7BnaFtqBWAwc/view?usp=sharing";
+  "https://drive.google.com/file/d/1N8mG0HMYBwFlyPdFLBaxxIIVEZ-I84U2/view?usp=sharing";
 
 const highlights = [
   { label: "Degree", value: "B.Tech, CSE (Data Science) · 2027" },
