@@ -2,6 +2,19 @@ import PageLayout from "../components/PageLayout";
 import { motion } from "framer-motion";
 
 const projects = [
+   {
+    title: "HireAxis",
+    badge: "ML DL",
+    problem: "AI-Powered Job Portal with Video Interview & Resume Intelligence",
+    highlights: [
+      "AI-driven recruitment backend with resume NLP parsing, fuzzy skill matching, and automated applicant scoring",
+      "LLM-generated skill-based interview questions combined with computer vision analysis of confidence and behavior.",
+      "Scalable REST API for recruiters to upload resumes, extract insights, and evaluate candidates seamlessly",
+    ],
+    stack: ["FastAPI", "MERN", "NLP", "OpenCV", "ResNet50", "LLM"],
+    github: "https://github.com/kushith19/HireAxis",
+    demo: 'https://vimeo.com/1173374668?fl=ip&fe=ec',
+  },
   {
     title: "SortIt",
     badge: "🏆 Hackathon Winner",
@@ -15,21 +28,10 @@ const projects = [
     github: "https://github.com/kushith19/SortIt-socratic-AI-mentor-",
     demo: "https://vimeo.com/1171793551?fl=ip&fe=ec",
   },
-  {
-    title: "HireAxis",
-    problem: "AI-Powered Job Portal with Video Interview & Resume Intelligence",
-    highlights: [
-      "AI-driven recruitment backend with resume NLP parsing, fuzzy skill matching, and automated applicant scoring",
-      "LLM-generated skill-based interview questions combined with computer vision analysis of confidence and behavior.",
-      "Scalable REST API for recruiters to upload resumes, extract insights, and evaluate candidates seamlessly",
-    ],
-    stack: ["FastAPI", "MERN", "NLP", "OpenCV", "ResNet50", "LLM"],
-    github: "https://github.com/kushith19/HireAxis",
-    demo: '',
-  },
+ 
   {
   title: "CRISP",
-   badge: "ML Data Science",
+   badge: "Data Science",
   problem: "Customer Retention Intelligence & Segmentation Platform",
   highlights: [
     "XGBoost churn prediction pipeline with SHAP TreeExplainer — every customer gets an individual explanation of the top 5 factors driving their risk score, not just a probability.",
